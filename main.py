@@ -34,7 +34,7 @@ def main():
             f"*:k체크: <https://static.wixstatic.com/media/50072f_8d974c0474ba4ba5b8652ffd237c6a9b~mv2.jpg|주차등록 및 주차장 안내>*\n"
             f"\n"
             f"\n"
-            f"*자세한 자료는 *댓글（스레드）* 참고 바랍니다!*\n\n"
+            f"*자세한 자료는 :point_up: :point_up: 클릭하여 확인 부탁드립니다!*\n\n"
             f"*문의사항 : 인사총무팀 총무/시설 담당자*\n\n"
             f"감사합니다.\n"
         )
