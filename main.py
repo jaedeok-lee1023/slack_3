@@ -30,7 +30,7 @@ def main():
             f":arrow_forward: 주차장 주차라인 내 주차 준수 / 경차 및 전기차 전용 준수\n"
             f":arrow_forward: 지자체에서 외부 불법 주/정차 수시 단속 중\n"
             f":arrow_forward: 부속동 주차장 이용 시 직원식당 측에서 견인 등 조치 예정\n\n"
-            f"*:k체크: <https://docs.google.com/forms/d/e/1FAIpQLSfK121pYkYfmsL9I9MGX5tgA8Y6u1v03ZOP2RX9stmaLGH_Sg/viewform|주차등록링크>* :point_left: (Click)\n"
+            f"*:k체크: <https://docs.google.com/forms/d/e/1FAIpQLSfK121pYkYfmsL9I9MGX5tgA8Y6u1v03ZOP2RX9stmaLGH_Sg/viewform|주차등록링크>* :point_left: *(Click)*\n"
             f"*:k체크: <https://static.wixstatic.com/media/50072f_8d974c0474ba4ba5b8652ffd237c6a9b~mv2.jpg|주차등록 및 주차장 안내>*\n"
             f"\n"
             f"\n"
