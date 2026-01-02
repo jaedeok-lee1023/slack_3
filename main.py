@@ -67,9 +67,8 @@ def main():
             f":arrow_forward: 외부 불법 주/정차 수시 단속 진행 중_관공서\n"
             f":arrow_forward: 부속동(직원식당) 주차장 주차불가, 주차위반 스티커 또는 견인 조치 예정\n\n"
             f"\n"
-            f"*:k체크: <https://docs.google.com/forms/d/e/1FAIpQLSfK121pYkYfmsL9I9MGX5tgA8Y6u1v03ZOP2RX9stmaLGH_Sg/viewform|주차등록링크>* :point_left: *(Click)*\n"
+            f"*:k체크: <https://docs.google.com/forms/d/e/1FAIpQLSfK121pYkYfmsL9I9MGX5tgA8Y6u1v03ZOP2RX9stmaLGH_Sg/viewform|주차등록링크>* *(Click)*\n\n"
             f"\n"
-            f"*자세한 자료는 :point_up: :point_up: 클릭하여 확인 부탁드립니다!*\n\n"
             f"*:slack: 문의사항 : 인사총무팀 총무/시설 담당자*\n\n"
             f"감사합니다.\n"
         )
