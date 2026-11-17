@@ -1,0 +1,57 @@
+name: Kurly Groupware Bot
+
+on:
+  workflow_dispatch: # 외부 스케줄러(cron-job.org) 및 수동 실행용
+
+# [권한 설정] 봇이 로그 파일을 쓰고 커밋할 수 있도록 권한 부여
+permissions:
+  contents: write
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-24.04
+    
+    # [설정] 시스템 타임존을 한국으로 설정 (로그 시간 확인 용이)
+    env:
+      TZ: 'Asia/Seoul'
+
+    steps:
+    - name: 코드 가져오기
+      uses: actions/checkout@v3
+
+    - name: 파이썬 설정
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: 라이브러리 설치
+      run: |
+        pip install -r requirements.txt
+
+    - name: 봇 실행
+      env:
+        USER_ID: ${{ secrets.USER_ID }}
+        USER_PW: ${{ secrets.USER_PW }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
+      run: |
+        python main.py
+
+    - name: 로그 파일 저장 (Commit & Push)
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        
+        # sent_log.txt 추가
+        if [ -f sent_log.txt ]; then
+          git add sent_log.txt
+        fi
+
+        # [추가됨] 스레드 ID 저장 파일 추가
+        if [ -f daily_slack_ts.json ]; then
+          git add daily_slack_ts.json
+        fi
+
+        # 변경사항이 있을 때만 커밋
+        git commit -m "Update sent_log.txt and daily_slack_ts.json [skip ci]" || echo "변경사항 없음 (커밋 건너뜀)"
+        git push
