@@ -1,0 +1,31 @@
+name: GW Diagnose
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install selenium webdriver-manager requests pytimekr
+
+      - name: Run diagnose
+        env:
+          USER_ID: ${{ secrets.USER_ID }}
+          USER_PW: ${{ secrets.USER_PW }}
+        run: python gw_diagnose.py
+
+      - name: Upload debug output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gw-debug
+          path: debug_out/
+          retention-days: 1
